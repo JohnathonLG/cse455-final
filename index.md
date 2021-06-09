@@ -12,6 +12,7 @@ Additionally, traders consider many other types of data on their plots as well, 
 - Moving averages: For a clearer view of trends.
 - Moving Average Convergence Divergence (MACD): A special type of chart showing the relationship between two different exponential moving averages (EMAs).
 - Relative Strength Indicator (RSI): A metric which describes whether an asset is considered "overbought" or "oversold." A similar but subtley different way of showing price momentum.
+
 and many more. In all of these charts, traders seek to identify patterns, which could give hints for future movements. Such patterns can be very common, and very strong
 indicators. In fact, they are frequently given names. The inspiration for this project was to see if a Convolutional Neural Network (CNN) could perform the same task,
 identifying patterns and predicting short-term movement.
