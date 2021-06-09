@@ -44,7 +44,7 @@ def import_data():
                 chart_from_df(df, start, close, nextclose, asset)
             except KeyError:
                 continue
-            except:  # Need this to prevent be robust against any unexpected errors when running overnight for days
+            except:  # Need this to be robust against any unexpected errors when running overnight for days
                 continue
         # start += dt.timedelta(days=1)
         # chart_end += dt.timedelta(days=1)
