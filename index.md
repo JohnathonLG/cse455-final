@@ -28,7 +28,7 @@ we were able to get data for any asset on the database (we used Yahoo finance) o
 We elected to include 14 days of price data on each chart, using simple red/green candlesticks ("Charles" style), with volume bars on the bottom and a
 3-day moving average line plotted on top. To keep things simple for the network, we ommitted any scale/text and exaggerated the bars for easier feature extraction.
 
-As an example, here is a chart of Ethereum going parabolic (meaning shooting upwards in price).
+As an example, here is a chart of Ethereum going parabolic. (Shooting upwards in price. "Mooning" if you will.)
 
 ![Example Chart](https://github.com/JohnathonLG/cse455-final/blob/main/ETH-USD_2017-02-15.jpg?raw=true)
 
