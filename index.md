@@ -42,7 +42,7 @@ Each chart was classified into 7 outcomes, based on the price performance the ne
 - \>5% decline
 - \>10% decline
 
-Here are some examples of charts, possible patterns that a trader may notice (and hopefully the network as well), and their classification.
+Here are some examples of charts, possible patterns that a trader (and hopefully the network) may notice, and their classification.
 
 #### Bullflag / Descending Wedge
 Classification: Bullish (+ \>5%)
