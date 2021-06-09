@@ -34,36 +34,39 @@ As an example, here is a chart of Ethereum going parabolic (meaning shooting upw
 
 ### Classification
 Each chart was classified into 7 outcomes, based on the price performance the next day:
-- >10% growth
-- >5% growth
-- >1% growth
+- \>10% growth
+- \>5% growth
+- \>1% growth
 - Approximately flat
-- >1% decline
-- >5% decline
-- >10% decline
+- \>1% decline
+- \>5% decline
+- \>10% decline
 
 Here are some examples of charts, possible patterns that a trader may notice (and hopefully the network as well), and their classification.
 
 #### Bullflag / Descending Wedge
-Classification: Bullish (+ >5%)
+Classification: Bullish (+ \>5%)
 
 One of the strongest bullish signals. Recognizable by an overall descending trend, with oscillations of decreasing amplitude, AKA "consolidating,"
 ready to "break out" significantly upward. Volume is seen to be following the price movements closely, which can be considered a good sign.
+
 ![Bullflag Example](https://github.com/JohnathonLG/cse455-final/blob/main/ETH-USD_2016-04-25.jpg?raw=true)
 
 #### Ascending Wedge / Reversal
-Classification: Bearish (- >5%)
+Classification: Bearish (- \>5%)
 
 The opposite of the Descending Wedge. Overall an ascending trend, with oscillations diminishing. Typically represents an upcoming reversal, which we can see
 at the end of this chart. Inconsistent/uncertain trading volume also makes this a worrisome outlook as well. Volume should ideally be increasing when the price
 is increasing.
+
 ![Ascending Wedge Example](https://github.com/JohnathonLG/cse455-final/blob/main/DCR-USD_2017-01-21.jpg?raw=true)
 
 #### Pennant
-Classification: Bullish (+ >%5)
+Classification: Bullish (+ \>%5)
 
 Notable for having a sharp uptick in value (the staff) followed by consolidation (the pennant), followed by an upward breakout. High volume is another factor which indicates
 the upcoming upward movement. This is a very common pattern in cryptocurrency, which causes an overall "stepwise" pattern during bullish periods.
+
 ![Pennant Example](https://github.com/JohnathonLG/cse455-final/blob/main/BTC-USD_2017-11-26.jpg?raw=true)
 
 For the final dataset, we ran the program for several days, gathering data for each asset on each day, classifying it, and randomly saving it to either the train,
