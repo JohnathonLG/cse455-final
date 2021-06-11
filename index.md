@@ -181,6 +181,11 @@ Because of its poor performance with a more-than-ample training set, we decided 
 We decided to stick with this structure in the end both due to lack of GPU resources left for us and because optimizing it would take much longer. We recognize that there is an issue of overfitting, but it did end up performing better than when we tried reducing it to 6 layers. Our final NN structure was a 7-layer DarkNet shape trained from scratch.
 
 ## Results
+
+### The Numbers and Examples
+
+Overall, we were expecting more success with such a large training set, but our final results are not too bad either. We decided to judge our model based off of its raw accuracy (guessing both polarity and magnitude correctly) and polarity accuracy (guessing if the graph was going to stay/rise/fall correctly).
+
 ![Final results](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/graphs/final%20results.png?raw=true)
 
 |      | Training set | Testing set |
