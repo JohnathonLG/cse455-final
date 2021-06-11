@@ -158,9 +158,13 @@ def chart_from_df(df, date, close, nextclose, asset, filename=None):
 
 [All of the final code used for our neural net can be found here.](https://github.com/JohnathonLG/cse455-final/blob/2fbae483b2a8d163912e2d4923bf307f4b4a6158/cse455_final.ipynb)
 
-### Training Data
+### Training and Testing Sets
 
-At first, our initial goal was to get a basic convolutional neural network up and running and improving it from there. We began by following the simple convolutional structure from tutorial, consisting of 3 layers with batch normalization. Since our images were considerably larger than those demo'd in tutorial, we decided to make the stride 3 and run it for 30 epochs with a scheduler that reduced the learning rate every 10 epochs (0.1, 0.01, 0.001). We added mild data augmentation by padding the edges and taking 253x357 crops out of it and set the batch size to 128.
+As mentioned before, we were working with images that are 253x357 consistently. We decided to have mild data augmentation for this by padding the edges and taking 253x357 crops out of it. We didn't go for flips or any kind of rotation since that would change the meaning of our charts and we know that the NN will always be fed normal charts for predictions. We set our batch size to 128 and had a training set of 45,099 images and a testing set of 6,511 images.
+
+### Structure
+
+At first, our initial goal was to get a basic convolutional neural network up and running and improving it from there. We began by following the simple convolutional structure from tutorial, consisting of 3 layers with batch normalization. Since our images were considerably larger than those demo'd in tutorial, we decided to make the stride 3 and run it for 30 epochs with a scheduler that reduced the learning rate every 10 epochs (0.1, 0.01, 0.001). 
 
 ![initial results](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/graphs/30epochs_basenn_stride3.png)
 
