@@ -182,12 +182,14 @@ We decided to stick with this structure in the end both due to lack of GPU resou
 
 ## Results
 ![Final results](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/graphs/final%20results.png)
+
 |      | Training set | Testing set |
 | ----------- | ----------- | -----------|
 | Raw Accuracy    | 99.9%       | 44.9%    |
 | Polarity Accuracy (correctly guessing up/down)   | 99.9%       |60.9% |
 
 To further validate that our neural net at least (somewhat) works, we gave it 1 random example from each category that it has never seen before. We then checked to see how close its guess was in terms of polarity and magnitude.
+
 |Currency/Date|Actual Movement | Predicted Movement| Correct Polarity | Correct Magnitude | Candlestick chart |
 |---|---|---|---|---|---|
 |Bitcoin 2/8/19 | +1-5% | +5-10%| True| False |![+1](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/+1/BTC-USD_2019-02-08.jpg)|
