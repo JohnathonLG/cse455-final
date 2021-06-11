@@ -153,15 +153,58 @@ def chart_from_df(df, date, close, nextclose, asset, filename=None):
 ```
 
 ## Creating the Network
-At first, our initial goal was to get a basic convolutional neural network up and running and improving it from there.
+
+### Code
+
+[All of the final code used for our neural net can be found here.](https://github.com/JohnathonLG/cse455-final/blob/2fbae483b2a8d163912e2d4923bf307f4b4a6158/cse455_final.ipynb)
+
+### Training Data
+
+At first, our initial goal was to get a basic convolutional neural network up and running and improving it from there. We began by following the simple convolutional structure from tutorial, consisting of 3 layers with batch normalization. Since our images were considerably larger than those demo'd in tutorial, we decided to make the stride 3 and run it for 30 epochs with a scheduler that reduced the learning rate every 10 epochs (0.1, 0.01, 0.001). We added mild data augmentation by padding the edges and taking 253x357 crops out of it and set the batch size to 128.
+
+![initial results](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/graphs/30epochs_basenn_stride3.png)
+
+As you can see, the result performed very poorly for both the training set and testing set. The losses were too great, so we decided to expand the net to 5 layers and derive our neural net structure from the DarkNet64 structure presented in the tutorial. We lowered the stride to 2, and this network structure also introduced max pooling, which means that we didn't have to deal with weights anymore. At the end there is an adaptive average pool before the fully-connected layer as well, which would help with our odd non-standard image size. We then did a trial run for 5 epochs with the following results.
+
+![second results](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/graphs/5epochs_darknet_stride2.png)
+
+We thought that iterating this neural net through many more epochs might be the solution. Naively, we set the training to last 80 epochs (with similar scheduling as before except letting each stage run for 20 epochs) and ran it overnight. The performance was not much better than running it for 5 epochs (about 40% and 31% for the training and testing sets respectively). In the end, it was a waste of time and our NN was struggling to even predict our training set correctly.
+
+Because of its poor performance with a more-than-ample training set, we decided to expand the network with more parameters in order to better categorize our complex charts. At first we expanded to 8 layers with a fully-connected layer with 2048 connections but due to runtime concerns, ended up with 7 layers and 1024 connections.
+
+![results](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/graphs/morelayers_darknet_60epochs.png)
+
+We decided to stick with this structure in the end both due to lack of GPU resources left for us and because optimizing it would take much longer. We recognize that there is an issue of overfitting, but it did end up performing better than when we tried reducing it to 6 layers. Our final NN structure was a 7-layer DarkNet shape trained from scratch.
+
 ## Results
-![Our results for the final iteration of our neural net](https://github.com/JohnathonLG/cse455-final/blob/14a60210a6892bce715929b92da4d65766aaaa20/graphs/final%20results%20with%20more%20metrics.png)
+![Final results](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/graphs/final%20results.png)
+|      | Training set | Testing set |
+| ----------- | ----------- | -----------|
+| Raw Accuracy    | 99.9%       | 44.9%    |
+| Polarity Accuracy (correctly guessing up/down)   | 99.9%       |60.9% |
 
+To further validate that our neural net at least (somewhat) works, we gave it 1 random example from each category that it has never seen before. We then checked to see how close its guess was in terms of polarity and magnitude.
+|Currency/Date|Actual Movement | Predicted Movement| Correct Polarity | Correct Magnitude | Candlestick chart |
+|---|---|---|---|---|---|
+|Bitcoin 2/8/19 | +1-5% | +5-10%| True| False |![+1](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/+1/BTC-USD_2019-02-08.jpg)|
+|Dogecoin 12/3/18 | +5-10% | +5-10% | True | True |![+5](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/+5/DOGE-USD_2018-12-03.jpg)|
+|Zcash 3/21/20| +10% or more|+10% or more|True|True|![+10](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/+10/ZEC-USD_2020-03-21.jpg)|
+|Bitcoin SV 4/9/19|no movement|-5-10%|False|False|![n](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/n/BSV-USD_2019-09-04.jpg)|
+|BitTorrent 1/23/19|-1-5%|-5-10%|True|False|![-1](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/-1/BTT1-USD_2019-01-23.jpg)|
+|Dash 2/17/21| -5-10% | -1-5%| True| False |![-5](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/-5/-5/DASH-USD_2021-02-17.jpg)|
+|NEM 3/27/15| -10% or more|-1-5%|True| False | ![-10](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/-10/XEM-USD_2015-03-27.jpg)|
+
+We even generated a Bitcoin chart from today (2/9/21) to see what it thinks. Only those reading this will know if it was right or not.
+![btctoday](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/unknown/BTC-USD_2021-6-9.jpg)
+Predicted movement: +1-5%
+
+
+Overall
 ### Successes
-Overall, we feel that the project can be considered a success.
+Overall, we feel that the project can be considered a success. We expected the net's ability to guess polarity to be greater than its ability to guess both polarity and magnitude, and we were right. As far as we know, most people who embark on this problem only try to guess a stock's polarity.
 
-- Considering that we are attempting to predict not just the movement direction, but also magnitude, our results are not disappointing.
-- Generating large amounts of data for an arbitrary list of assets. With more time to run the scraping program, we could have even more data quite easily.
+- Considering that we are attempting to predict not just the movement direction, but also magnitude, our results are not disappointing. This is a very complex discipline and getting any kind of better-than-random predictions was our goal.
+- Generating large amounts of data for an arbitrary list of assets. With more time to run the scraping program, we could have even more data quite easily, which means over a longer period, we feel as if this NN will adjust to more patterns and improve.
 
 ### Problems
 That said, there are certainly things that either didn't work as planned or should be more carefully considered going forward:
