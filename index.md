@@ -205,7 +205,7 @@ To further validate that our neural net at least (somewhat) works, we gave it 1 
 |Dash 2/17/21| -5-10% | -1-5%| True| False |![-5](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/-5/-5/DASH-USD_2021-02-17.jpg?raw=true)|
 |NEM 3/27/15| -10% or more|-1-5%|True| False | ![-10](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/-10/XEM-USD_2015-03-27.jpg?raw=true)|
 
-We even generated a Bitcoin chart from today (2/9/21) to see what it thinks. Only those reading this will know if it was right or not.
+We even generated a Bitcoin chart from today (6/9/21) to see what it thinks. Only those reading this will know if it was right or not.
 
 ![btctoday](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/unknown/BTC-USD_2021-6-9.jpg?raw=true)
 Predicted movement: +1-5%
