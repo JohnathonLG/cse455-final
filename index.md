@@ -205,7 +205,6 @@ We even generated a Bitcoin chart from today (2/9/21) to see what it thinks. Onl
 Predicted movement: +1-5%
 
 
-Overall
 ### Successes
 Overall, we feel that the project can be considered a success. We expected the net's ability to guess polarity to be greater than its ability to guess both polarity and magnitude, and we were right. As far as we know, most people who embark on this problem only try to guess a stock's polarity.
 
