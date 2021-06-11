@@ -153,8 +153,9 @@ def chart_from_df(df, date, close, nextclose, asset, filename=None):
 ```
 
 ## Creating the Network
-
+At first, our initial goal was to get a basic convolutional neural network up and running and improving it from there.
 ## Results
+![Our results for the final iteration of our neural net](https://github.com/JohnathonLG/cse455-final/blob/14a60210a6892bce715929b92da4d65766aaaa20/graphs/final%20results%20with%20more%20metrics.png)
 
 ### Successes
 Overall, we feel that the project can be considered a success.
@@ -167,13 +168,14 @@ That said, there are certainly things that either didn't work as planned or shou
 
 - Many other cryptocurrencies (aka "altcoins") other than Bitcoin tend to follow the movement of Bitcoin. This means that our training set may not have as much organic data as it might appear.
 - Overfitting. We're getting an incredibly strong tendency towards overfitting. More weight decay may help, but we need more time to try other network structures, as well.
+- Difficulty of the problem. If guessing stocks was easy, programmers would be rich. However, since creating a neural net to predict movement in stocks has a lot of variables (NN parameters/weights/structure, input image parameters, where data is sourced from)  and could end up taking years of research to perfect, we were happy with how our NN did.
 
 ## Going Forward
 We'd like to continue this project going forward, with more time to experiment and apply the network. We can do this using trading APIs, possibly at
 Coinbase. They even support test portfolios, so we could see how the network does without any actual investment (but what's the fun in that?).
 
 Next steps:
-- More data. It seems like we could use more data than 45,000 training examples. Additionally, we should add more assets. Should we expand to stocks, or would that hard the performance in applications with purely cryptocurrencies?
+- More data. It seems like we could use more data than 45,000 training examples. Additionally, we should add more assets. Should we expand to stocks, or would that hurt the performance in applications with purely cryptocurrencies?
 - Try training on and applying the network on different time scales. Maybe these patterns are better indicators when evaluating on shorter time intervals?
 - As a more fundamental question, does it makes sense to generate charts and use CNNs compared to simply using the numerical data? Would it learn to extract features as well without generating a candlestick chart first? We chose to take this approach for the project because it mimicks the pattern recognition that we do as traders, but that's not to say it's the only way it could be done with neural networks.
 
