@@ -168,7 +168,7 @@ At first, our initial goal was to get a basic convolutional neural network up an
 
 ![initial results](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/graphs/30epochs_basenn_stride3.png?raw=true)
 
-As you can see, the result performed very poorly for both the training set and testing set. The losses were too great, so we decided to expand the net to 5 layers and derive our neural net structure from the DarkNet64 structure presented in the tutorial. We lowered the stride to 2, and this network structure also introduced max pooling, which means that we didn't have to deal with weights anymore. At the end there is an adaptive average pool before the fully-connected layer as well, which would help with our odd non-standard image size. We then did a trial run for 5 epochs with the following results.
+As you can see, the result performed very poorly for both the training set and testing set. The losses were too great, so we decided to expand the net to 5 layers and derive our neural net structure from the DarkNet64 structure presented in the tutorial. We lowered the stride to 2, and this network structure also introduced max pooling, which means that we didn't have to deal with biases anymore. At the end there is an adaptive average pool before the fully-connected layer as well, which would help with our odd non-standard image size. We then did a trial run for 5 epochs with the following results.
 
 ![second results](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/graphs/5epochs_darknet_stride2.png?raw=true)
 
