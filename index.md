@@ -1,3 +1,5 @@
+## Video
+[Click here to watch a short summary of StockNet](https://youtu.be/cFqpjZUP2M0)
 ## The Problem
 
 Stock and cryptocurrency traders consider a wide array of information in their work. One of the critical tools in their toolbox is Technical Analysis. This involves analyzing
