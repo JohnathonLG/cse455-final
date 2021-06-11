@@ -192,7 +192,7 @@ To further validate that our neural net at least (somewhat) works, we gave it 1 
 
 |Currency/Date|Actual Movement | Predicted Movement| Correct Polarity | Correct Magnitude | Candlestick chart |
 |---|---|---|---|---|---|
-|Bitcoin 2/8/19 | +1-5% | +5-10%| True| False |![+1](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/+1/BTC-USD_2019-02-08.jpg)|
+|Bitcoin 2/8/19 | +1-5% | +5-10%| True| False |![+1](https://github.com/JohnathonLG/cse455-final/blob/main/predictions/%2B1/BTC-USD_2019-02-08.jpg)|
 |Dogecoin 12/3/18 | +5-10% | +5-10% | True | True |![+5](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/+5/DOGE-USD_2018-12-03.jpg)|
 |Zcash 3/21/20| +10% or more|+10% or more|True|True|![+10](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/+10/ZEC-USD_2020-03-21.jpg)|
 |Bitcoin SV 4/9/19|no movement|-5-10%|False|False|![n](https://github.com/JohnathonLG/cse455-final/blob/38b47f8a6104df95af34e000c8c8ad4d6b64cef9/predictions/n/BSV-USD_2019-09-04.jpg)|
